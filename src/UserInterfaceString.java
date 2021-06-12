@@ -1,3 +1,7 @@
+/*
+ * @author n-c0de-r, jonasblome, and joeysmeets
+ * @version 12.06.21
+ */
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;

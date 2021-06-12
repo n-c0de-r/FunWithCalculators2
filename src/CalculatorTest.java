@@ -1,3 +1,7 @@
+/*
+ * @author n-c0de-r, jonasblome, and joeysmeets
+ * @version 12.06.21
+ */
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;

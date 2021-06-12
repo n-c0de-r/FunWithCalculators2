@@ -5,8 +5,8 @@
  * @author David J. Barnes and Michael Kolling
  * @version 2008.03.30
  * 
- * @author Alex and n-c0de-r
- * @version 27.05.2021
+ * @author Alex and n-c0de-r updated by n-c0de-r, jonasblome, and joeysmeets
+ * @version 12.06.21
  */
 public class Calculator
 {

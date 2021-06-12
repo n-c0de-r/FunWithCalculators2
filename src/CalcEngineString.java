@@ -1,3 +1,8 @@
+/*
+ * @author n-c0de-r, jonasblome, and joeysmeets
+ * @version 12.06.21
+ */
+
 public class CalcEngineString {
 	private String displayString = "";
 	private int mode = 10;

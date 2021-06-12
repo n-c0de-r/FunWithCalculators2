@@ -14,8 +14,10 @@ import javax.swing.border.EmptyBorder;
  * done here. This class is responsible just for putting up the display on 
  * screen. It then refers to the "CalcEngine" to do all the real work.
  * 
- * @author AlexJger and n-c0de-r
- * @version 27.05.2021
+ * /*
+ * @author n-c0de-r, jonasblome, and joeysmeets
+ * @version 12.06.21
+ */
  */
 public class UserInterfaceHex extends UserInterface {
 	 protected CalcEngineHex calcHex;

@@ -1,3 +1,7 @@
+/*
+ * @author ninaweddige and joeysmeets. Updated by n-c0de-r, jonasblome, and joeysmeets
+ * @version 12.06.21
+ */
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
