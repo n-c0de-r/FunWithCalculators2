@@ -15,8 +15,7 @@ import javax.swing.border.*;
  * @version 27.05.2021
  */
 
-public class UserInterface
-    implements ActionListener
+public class UserInterface implements ActionListener
 {
     protected CalcEngine calc;
     private boolean showingAuthor;
@@ -29,7 +28,7 @@ public class UserInterface
      * Create a user interface.
      * @param engine The calculator engine.
      */
-    public UserInterface(CalcEngine engine)
+    public UserInterface(CalcEngine engine) 
     {
         calc = engine;
         showingAuthor = true;

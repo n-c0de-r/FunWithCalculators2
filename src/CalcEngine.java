@@ -15,6 +15,8 @@ public class CalcEngine
     protected int displayValue;
     // The value of an existing left operand.
     private int leftOperand;
+    
+    protected int mode;
 
     /**
      * Create a CalcEngine.
@@ -22,6 +24,7 @@ public class CalcEngine
     public CalcEngine()
     {
         clear();
+        mode = 10;
     }
 
     /**
@@ -30,7 +33,7 @@ public class CalcEngine
      */
     public int getDisplayValue()
     {
-        return displayValue;
+        return displayValue; 
     }
 
     /**
@@ -107,8 +110,10 @@ public class CalcEngine
     
     /**
      * The '=' button was pressed.
+     * @throws IncorrectFormatException 
+     * @throws StackUnderflowException 
      */
-    public void equals()
+    public void equals() throws StackUnderflowException, IncorrectFormatException
     {
         // This should completes the building of a second operand,
         // so ensure that we really have a left operand, an operator
@@ -150,7 +155,7 @@ public class CalcEngine
      */
     public String getAuthor()
     {
-        return "D.J. Barnes & M. Kolling update by Alex & Nermin";
+        return "D.J. Barnes & M. Kolling";
     }
 
     /**
@@ -233,7 +238,7 @@ public class CalcEngine
     /**
      * Report an error in the sequence of keys that was pressed.
      */
-    private void keySequenceError()
+    protected void keySequenceError()
     {
         System.out.println("A key sequence error has occurred.");
         // Reset everything.

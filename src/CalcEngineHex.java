@@ -4,7 +4,7 @@
  * @author AlexJger and n-c0de-r
  * @version 27.05.2021
  */
-public class CalcEngineHex extends CalcEngine {
+public class CalcEngineHex extends CalcEngine { 
 		
 	@Override
     public void numberPressed(int number, int mode)

@@ -5,7 +5,7 @@ public class StackUnderflowException extends Exception {
 	 */
 	private static final long serialVersionUID = 3866301275271324783L;
 	
-	public StackUnderflowException() {
+	public StackUnderflowException() { 
 		
 	}
 	

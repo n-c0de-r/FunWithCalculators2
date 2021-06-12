@@ -12,7 +12,7 @@ public class PostfixTest {
 	}
 	
 	@Test
-	public void testRpnEvaluate() throws StackUnderflowException {
+	public void rpnEvaluateTest() throws StackUnderflowException {
 		String rpn = "1 2 * 3 + ";
 		assertEquals(5, tester.evaluate(rpn), 0.01);
 	}
@@ -126,7 +126,7 @@ public class PostfixTest {
 	@Test
 	public void ifxToPfxTest12() throws StackUnderflowException, IncorrectFormatException {
 		String infix = "(2 ^ (3 * 4 + 5))";
-		assertEquals("234*5+^", tester.infixToPostfix(infix));
+		assertEquals("234*5+^", tester.infixToPostfix(infix)); 
 	}
 	
 	@Test

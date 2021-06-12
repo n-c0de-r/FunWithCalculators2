@@ -10,18 +10,16 @@
  */
 public class Calculator
 {
-    private CalcEngine engine;
-    private UserInterface gui;
+    private CalcEngineString engine;
+    private UserInterfaceString gui;
 
     /**
      * Create a new calculator and show it.
      */
-    public Calculator()
+    public Calculator() 
     {
-        //engine = new CalcEngine();
-        //gui = new UserInterface(engine);
-    	engine = new CalcEngineHex();
-        gui = new UserInterfaceHex(engine);
+    	engine = new CalcEngineString();
+    	gui = new UserInterfaceString(engine);
     }
 
     /**

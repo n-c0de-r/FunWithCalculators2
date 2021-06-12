@@ -37,7 +37,7 @@ public class StackAsList<E> implements Stack<E> {
 			size--;
 			return tmp;
 		}else{
-			throw new StackUnderflowException("Nothing on the stack to pop.");
+			throw new StackUnderflowException("Nothing on the stack to pop.");  
 		} 
 	}
 

@@ -27,7 +27,7 @@ public class Postfix {
 			char t = pfx.charAt(i);
 			//t is an operand -> push it to operands stack
 			if(Character.isDigit(t)) {
-				operands.push((double)(Character.getNumericValue(t))); //only works for digits 0-9
+				operands.push((double)(Character.getNumericValue(t))); //only works for digits 0-9 
 			//t is whitespace -> do nothing, move on to next character
 			}else if (t == ' '){
 				
