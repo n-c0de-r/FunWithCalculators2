@@ -4,22 +4,18 @@
  */
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class CalculatorTest {
     
     private CalcEngineString engine;
-    private UserInterfaceString gui;
     	
 	@BeforeEach
 	void setUp() throws Exception {
     	
     	engine = new CalcEngineString();
-    	gui = new UserInterfaceString(engine);
 	}
 
 	@AfterEach
@@ -29,50 +25,139 @@ class CalculatorTest {
 
 	@Test 
 	void test1() throws StackUnderflowException, IncorrectFormatException {
-		engine.numberPressed(5);
-		engine.applyOperators("+");
-		engine.numberPressed(5);
-		engine.equals();
+		engine.buttonPressed("5");
+		engine.buttonPressed("+");
+		engine.buttonPressed("5");
+		engine.equals(10);
 		assertEquals("10.0", engine.getDisplayString());
 	}
 	
-//	@Test 
-//	void test2() {
-//		
-//	}
-//	
-//	@Test 
-//	void test3() {
-//		
-//	}
-//	
-//	@Test 
-//	void test4() {
-//		
-//	}
-//	
-//	@Test 
-//	void test5() {
-//		
-//	}
-//	
-//	@Test 
-//	void test6() {
-//		
-//	}
-//	
-//	@Test 
-//	void test7() {
-//		
-//	}
-//	
-//	@Test 
-//	void test8() {
-//		
-//	}
-//	
-//	@Test 
-//	void test9() {
-//		
-//	}
+	@Test 
+	void test2() throws StackUnderflowException, IncorrectFormatException  {
+		engine.buttonPressed("1");
+		engine.buttonPressed("+");
+		engine.buttonPressed("2");
+		engine.buttonPressed("*");
+		engine.buttonPressed("3");
+		engine.equals(10);
+		assertEquals("7.0", engine.getDisplayString());
+	}
+	
+	@Test 
+	void test3() throws StackUnderflowException, IncorrectFormatException  {
+		engine.buttonPressed("(");
+		engine.buttonPressed("1");
+		engine.buttonPressed("+");
+		engine.buttonPressed("2");
+		engine.buttonPressed(")");
+		engine.buttonPressed("*");
+		engine.buttonPressed("3");
+		engine.equals(10);
+		assertEquals("9.0", engine.getDisplayString());
+	}
+	
+	@Test 
+	void test4() throws StackUnderflowException, IncorrectFormatException  {
+		engine.buttonPressed("1");
+		engine.buttonPressed("+");
+		engine.buttonPressed("2");
+		engine.buttonPressed("*");
+		engine.buttonPressed("(");
+		engine.buttonPressed("3");
+		engine.buttonPressed("+");
+		engine.buttonPressed("4");
+		engine.buttonPressed(")");
+		engine.equals(10);
+		assertEquals("15.0", engine.getDisplayString());
+	}
+	
+	@Test 
+	void test5() throws StackUnderflowException, IncorrectFormatException  {
+		engine.buttonPressed("1");
+		engine.buttonPressed("*");
+		engine.buttonPressed("2");
+		engine.buttonPressed("+");
+		engine.buttonPressed("(");
+		engine.buttonPressed("3");
+		engine.buttonPressed("+");
+		engine.buttonPressed("4");
+		engine.buttonPressed(")");
+		engine.equals(10);
+		assertEquals("9.0", engine.getDisplayString());
+	}
+	
+	@Test 
+	void test6() throws StackUnderflowException, IncorrectFormatException  {
+		engine.buttonPressed("1");
+		engine.buttonPressed("*");
+		engine.buttonPressed("(");
+		engine.buttonPressed("2");
+		engine.buttonPressed("+");
+		engine.buttonPressed("3");
+		engine.buttonPressed(")");
+		engine.buttonPressed("+");
+		engine.buttonPressed("4");
+		engine.equals(10);
+		assertEquals("9.0", engine.getDisplayString());
+	}
+	
+	@Test 
+	void test7() throws StackUnderflowException, IncorrectFormatException  {
+		engine.buttonPressed("(");
+		engine.buttonPressed("1");
+		engine.buttonPressed("+");
+		engine.buttonPressed("2");
+		engine.buttonPressed(")");
+		engine.buttonPressed("*");
+		engine.buttonPressed("(");
+		engine.buttonPressed("3");
+		engine.buttonPressed("+");
+		engine.buttonPressed("4");
+		engine.buttonPressed(")");
+		engine.equals(10);
+		assertEquals("21.0", engine.getDisplayString());
+	}
+	
+	@Test 
+	void test8() throws StackUnderflowException, IncorrectFormatException  {
+		engine.buttonPressed("1");
+		engine.buttonPressed("+");
+		engine.buttonPressed("2");
+		engine.buttonPressed("*");
+		engine.buttonPressed("3");
+		engine.buttonPressed("+");
+		engine.buttonPressed("4");
+		engine.equals(10);
+		assertEquals("11.0", engine.getDisplayString());
+	}
+	
+	@Test 
+	void test9() throws StackUnderflowException, IncorrectFormatException  {
+		engine.buttonPressed("1");
+		engine.buttonPressed("*");
+		engine.buttonPressed("2");
+		engine.buttonPressed("+");
+		engine.buttonPressed("3");
+		engine.buttonPressed("*");
+		engine.buttonPressed("4");
+		engine.equals(10);
+		assertEquals("14.0", engine.getDisplayString());
+	}
+	
+	@Test 
+	void test10() throws StackUnderflowException, IncorrectFormatException  {
+//		engine.buttonPressed("(");
+//		engine.buttonPressed("1");
+//		engine.buttonPressed("+");
+//		engine.buttonPressed("2");
+//		engine.buttonPressed(")");
+//		engine.buttonPressed("*");
+//		engine.buttonPressed("(");
+//		engine.buttonPressed("3");
+//		engine.buttonPressed("+");
+//		engine.buttonPressed("4");
+//		engine.buttonPressed(")");
+		engine.equals(10);
+		assertEquals("21.0", engine.getDisplayString());
+	}
 }
