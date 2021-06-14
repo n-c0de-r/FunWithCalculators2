@@ -29,9 +29,9 @@ class CalculatorTest {
 
 	@Test 
 	void test1() throws StackUnderflowException, IncorrectFormatException {
-		engine.numberPressed(5, 0);
+		engine.numberPressed(5);
 		engine.applyOperators("+");
-		engine.numberPressed(5, 0);
+		engine.numberPressed(5);
 		engine.equals();
 		assertEquals("10.0", engine.getDisplayString());
 	}

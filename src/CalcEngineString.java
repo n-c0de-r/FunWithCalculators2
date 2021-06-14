@@ -5,7 +5,6 @@
 
 public class CalcEngineString {
 	private String displayString = "";
-	private int mode = 10;
 	private Postfix postfix;
 	
 	public CalcEngineString() {

@@ -18,7 +18,7 @@ public class UserInterfaceString implements ActionListener{
 	private JCheckBox h;
 	private JButton A, B, C, D, E, F;
 	private int mode = 10;
-	private Postfix postfix = new Postfix(); 
+	
 
 	public UserInterfaceString(CalcEngineString engine) {
 		calc = engine;
