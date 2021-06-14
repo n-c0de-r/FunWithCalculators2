@@ -48,12 +48,15 @@ public class UserInterfaceString implements ActionListener{
 		
 		JPanel buttonPanel = new JPanel(new GridLayout(6, 6));
 		A = new JButton("A");
+		A.addActionListener(this);
         buttonPanel.add(A);
         A.setEnabled(false);
         B = new JButton("B");
+        B.addActionListener(this);
         buttonPanel.add(B);
         B.setEnabled(false);
         C = new JButton("C");
+        C.addActionListener(this);
         buttonPanel.add(C);
         C.setEnabled(false);
   		buttonPanel.add(new JLabel(" "));
@@ -64,12 +67,15 @@ public class UserInterfaceString implements ActionListener{
         h.addActionListener(this);
   		
         D = new JButton("D");
+        D.addActionListener(this);
         buttonPanel.add(D);
         D.setEnabled(false);
         E = new JButton("E");
+        E.addActionListener(this);
         buttonPanel.add(E);
         E.setEnabled(false);
         F = new JButton("F");
+        F.addActionListener(this);
         buttonPanel.add(F);
         F.setEnabled(false);
  		buttonPanel.add(new JLabel(" "));
@@ -115,7 +121,6 @@ public class UserInterfaceString implements ActionListener{
 	
 	public void actionPerformed(ActionEvent event) {
 		String command = event.getActionCommand();
-		
 		if (h.isSelected()) {
 			mode = 16;
 			A.setEnabled(true);
@@ -150,13 +155,11 @@ public class UserInterfaceString implements ActionListener{
 			command.equals("E") ||
 			command.equals("F")) {
 			
-			//HexLetters to int:
-			int number = Integer.parseInt(command, mode);
-			calc.numberPressed(number, mode);
+			calc.numberPressed(command);
 								
 			} else if (command.equals("=")) {
 				try {
-					calc.equals();
+					calc.equals(mode);
 				} catch (StackUnderflowException | IncorrectFormatException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
