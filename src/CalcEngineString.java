@@ -26,7 +26,7 @@ public class CalcEngineString {
      * Calculate the dec / hex output
      * @param number The number pressed on the calculator.
      */
-	public void numberPressed(int number, int mode) {
+	public void numberPressed(String number) {
         displayString = displayString + number; 
     }
 
@@ -34,10 +34,15 @@ public class CalcEngineString {
     	displayString = displayString + command;
     }
 	 
-	public void equals() throws StackUnderflowException, IncorrectFormatException {
+	public void equals(int mode) throws StackUnderflowException, IncorrectFormatException {
     	if (displayString != null) {
     		String pfx = postfix.infixToPostfix(displayString);
-        	displayString = ""+postfix.evaluate(pfx);
+    		if (mode == 10) {
+    			displayString = ""+postfix.evaluate(pfx);
+    		} else {
+    			//Cast Doubles to integer, as hex cant calculate doubles anyways!
+    			displayString = ""+ Integer.toHexString((int) (postfix.evaluate(pfx)));
+    		}
     	}
     }
 	
