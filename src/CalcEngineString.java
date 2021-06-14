@@ -8,7 +8,6 @@ public class CalcEngineString {
 	private Postfix postfix;
 	
 	public CalcEngineString() {
-		super();
 		postfix = new Postfix();
 	}
 	
@@ -25,12 +24,8 @@ public class CalcEngineString {
      * Calculate the dec / hex output
      * @param number The number pressed on the calculator.
      */
-	public void numberPressed(String number) {
+	public void buttonPressed(String number) {
         displayString = displayString + number; 
-    }
-
-	public void applyOperators(String command) {
-    	displayString = displayString + command;
     }
 	 
 	public void equals(int mode) throws StackUnderflowException, IncorrectFormatException {
