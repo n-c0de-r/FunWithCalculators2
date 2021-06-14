@@ -5,7 +5,6 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.*;
 import javax.swing.border.EmptyBorder;
 
 public class UserInterfaceString implements ActionListener{
@@ -18,7 +17,6 @@ public class UserInterfaceString implements ActionListener{
 	private JCheckBox h;
 	private JButton A, B, C, D, E, F;
 	private int mode = 10;
-	
 
 	public UserInterfaceString(CalcEngineString engine) {
 		calc = engine;
@@ -59,12 +57,12 @@ public class UserInterfaceString implements ActionListener{
         C.addActionListener(this);
         buttonPanel.add(C);
         C.setEnabled(false);
-  		buttonPanel.add(new JLabel(" "));
-  		addButton(buttonPanel, "(");
   		h = new JCheckBox("Hex");
   		h.setSelected(false);
   		buttonPanel.add(h);
         h.addActionListener(this);
+        addButton(buttonPanel, "del");
+        addButton(buttonPanel, "?");
   		
         D = new JButton("D");
         D.addActionListener(this);
@@ -78,36 +76,37 @@ public class UserInterfaceString implements ActionListener{
         F.addActionListener(this);
         buttonPanel.add(F);
         F.setEnabled(false);
- 		buttonPanel.add(new JLabel(" "));
+        buttonPanel.add(new JLabel(" "));
+ 		addButton(buttonPanel, "(");
  		addButton(buttonPanel, ")");
- 		buttonPanel.add(new JLabel(" "));
   
   		addButton(buttonPanel, "7");
   		addButton(buttonPanel, "8");
   		addButton(buttonPanel, "9");
   		buttonPanel.add(new JLabel(" "));
-  		addButton(buttonPanel, "+");
-  		addButton(buttonPanel, "del");
+  		buttonPanel.add(new JLabel(" "));
+  		addButton(buttonPanel, "^");
   
   		addButton(buttonPanel, "4");
   		addButton(buttonPanel, "5");
   		addButton(buttonPanel, "6");
   		buttonPanel.add(new JLabel(" "));
-  		addButton(buttonPanel, "-");
-  		addButton(buttonPanel, "?");
+  		addButton(buttonPanel, "*");
+  		addButton(buttonPanel, "/");
   
   		addButton(buttonPanel, "1");
   		addButton(buttonPanel, "2");
   		addButton(buttonPanel, "3");
   		buttonPanel.add(new JLabel(" "));
-  		addButton(buttonPanel, "*");
-  		addButton(buttonPanel, "mod");
+  		addButton(buttonPanel, "+");
+  		addButton(buttonPanel, "-");
+  		
   
   		addButton(buttonPanel, "0");
   		buttonPanel.add(new JLabel(" "));
   		buttonPanel.add(new JLabel(" "));
   		buttonPanel.add(new JLabel(" "));
-  		addButton(buttonPanel, "/");
+  		buttonPanel.add(new JLabel(" "));
   		addButton(buttonPanel, "=");
       	
 		contentPane.add(buttonPanel, BorderLayout.CENTER);
@@ -116,7 +115,6 @@ public class UserInterfaceString implements ActionListener{
 		contentPane.add(status, BorderLayout.SOUTH);
 
 		frame.pack();
-//		toggleLetters();
 	}
 	
 	public void actionPerformed(ActionEvent event) {
@@ -137,27 +135,8 @@ public class UserInterfaceString implements ActionListener{
 			D.setEnabled(false);
 			E.setEnabled(false);
 			F.setEnabled(false);
-		}
-		if (command.equals("0") || 
-			command.equals("1") ||
-			command.equals("2") ||
-			command.equals("3") ||
-			command.equals("4") ||
-			command.equals("5") ||
-			command.equals("6") ||
-			command.equals("7") ||
-			command.equals("8") ||
-			command.equals("9")	||
-			command.equals("A") ||
-			command.equals("B") ||
-			command.equals("C") ||
-			command.equals("D") ||
-			command.equals("E") ||
-			command.equals("F")) {
-			
-			calc.numberPressed(command);
-								
-			} else if (command.equals("=")) {
+		}								
+			if (command.equals("=")) {
 				try {
 					calc.equals(mode);
 				} catch (StackUnderflowException | IncorrectFormatException e) {
@@ -171,7 +150,7 @@ public class UserInterfaceString implements ActionListener{
 			} else if (command.equals("?")) {
 				showInfo();
 			} else {
-				calc.applyOperators(command);
+				calc.buttonPressed(command);
 			}
 		redisplay();
 	}
