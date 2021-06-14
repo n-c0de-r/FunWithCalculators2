@@ -32,6 +32,10 @@ public class Postfix {
 			//t is an operand -> push it to operands stack
 			if(Character.isDigit(t)) {
 				operands.push((double)(Character.getNumericValue(t))); //only works for digits 0-9 
+				
+			}else if(Character.isAlphabetic(t)) {
+				double x = Integer.parseInt(""+ t, 16);
+				operands.push(x);
 			//t is whitespace -> do nothing, move on to next character
 			}else if (t == ' '){
 				
