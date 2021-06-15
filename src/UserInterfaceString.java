@@ -161,7 +161,6 @@ public class UserInterfaceString implements ActionListener{
 				try {
 					calc.equals(mode);
 				} catch (StackUnderflowException | IncorrectFormatException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			} else if (command.equals("Hex")) {

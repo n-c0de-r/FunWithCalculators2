@@ -146,7 +146,13 @@ public class UserInterface implements ActionListener
             calc.modulo();
         }
         else if(command.equals("=")) {
-            calc.equals();
+            try {
+				calc.equals();
+			} catch (StackUnderflowException e) {
+				e.printStackTrace();
+			} catch (IncorrectFormatException e) {
+				e.printStackTrace();
+			}
         }
         else if(command.equals("del")) {
             calc.clear();

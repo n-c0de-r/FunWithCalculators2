@@ -1,0 +1,16 @@
+/CalcEngine.class
+/CalcEngineHex.class
+/CalcEngineString.class
+/Calculator.class
+/CalculatorTest.class
+/IncorrectFormatException.class
+/Postfix.class
+/PostfixTest.class
+/Stack.class
+/StackAsList$Node.class
+/StackAsList.class
+/StackOverflowException.class
+/StackUnderflowException.class
+/UserInterface.class
+/UserInterfaceHex.class
+/UserInterfaceString.class
