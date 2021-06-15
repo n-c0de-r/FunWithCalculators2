@@ -45,26 +45,7 @@ public class UserInterfaceString implements ActionListener{
 		contentPane.add(display, BorderLayout.NORTH);
 		
 		JPanel buttonPanel = new JPanel(new GridLayout(6, 6));
-		A = new JButton("A");
-		A.addActionListener(this);
-        buttonPanel.add(A);
-        A.setEnabled(false);
-        B = new JButton("B");
-        B.addActionListener(this);
-        buttonPanel.add(B);
-        B.setEnabled(false);
-        C = new JButton("C");
-        C.addActionListener(this);
-        buttonPanel.add(C);
-        C.setEnabled(false);
-  		h = new JCheckBox("Hex");
-  		h.setSelected(false);
-  		buttonPanel.add(h);
-        h.addActionListener(this);
-        addButton(buttonPanel, "del");
-        addButton(buttonPanel, "?");
-  		
-        D = new JButton("D");
+		D = new JButton("D");
         D.addActionListener(this);
         buttonPanel.add(D);
         D.setEnabled(false);
@@ -76,6 +57,25 @@ public class UserInterfaceString implements ActionListener{
         F.addActionListener(this);
         buttonPanel.add(F);
         F.setEnabled(false);
+  		h = new JCheckBox("Hex");
+  		h.setSelected(false);
+  		buttonPanel.add(h);
+        h.addActionListener(this);
+        addButton(buttonPanel, "del");
+        addButton(buttonPanel, "?");
+  		
+        A = new JButton("A");
+		A.addActionListener(this);
+        buttonPanel.add(A);
+        A.setEnabled(false);
+        B = new JButton("B");
+        B.addActionListener(this);
+        buttonPanel.add(B);
+        B.setEnabled(false);
+        C = new JButton("C");
+        C.addActionListener(this);
+        buttonPanel.add(C);
+        C.setEnabled(false);
         buttonPanel.add(new JLabel(" "));
  		addButton(buttonPanel, "(");
  		addButton(buttonPanel, ")");
